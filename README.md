@@ -73,7 +73,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"id": "novo_id", "firstNam
 - **Atualizar um usuário existente:**
 
 ```bash
-curl -X PUT -H "Content-Type: application/json" -d '{"id": "id_existente", "firstName": "Name", "lastName": "LastName", "email": "test@example.com"}' http://localhost:8080/users/1
+curl -X PUT -H "Content-Type: application/json" -d '{"id": "id_existente", "firstName": "Name", "lastName": "LastName", "email": "test@example.com"}' http://localhost:8080/users/{id_existente}
 ```
 
 - **Excluir um usuário:**
