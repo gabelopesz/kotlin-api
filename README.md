@@ -40,6 +40,14 @@ Para utilizar a API, siga as instruções abaixo:
 3. Utilize o comando `docker run -p 8080:8080 nome-api` para iniciar a API.
 4. Acesse o serviço pelo navegador em `http://localhost:8080/users`.
 
+### A aplicação Ktor possui os seguintes endpoints:
+
+- `GET /users`: Retorna todos os usuários armazenados.
+- `GET /users/{id}`: Retorna o usuário com o ID fornecido.
+- `POST /users`: Adiciona um novo usuário.
+- `PUT /users/{id}`: Atualiza um usuário existente com o ID fornecido.
+- `DELETE /users/{id}`: Remove o usuário com o ID fornecido.
+
 ## Testando a API
 
 Para testar as rotas da API, você pode usar o cURL no terminal ou prompt de comando. Aqui estão alguns exemplos de comandos cURL:
@@ -59,13 +67,13 @@ curl http://localhost:8080/users/{id}
 - **Adicionar um novo usuário:**
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"id":"new_id","name":"New User"}' http://localhost:8080/users
+curl -X POST -H "Content-Type: application/json" -d '{"id": "novo_id", "firstName": "Name", "lastName": "LastName", "email": "test@example.com"}' http://localhost:8080/users
 ```
 
 - **Atualizar um usuário existente:**
 
 ```bash
-curl -X PUT -H "Content-Type: application/json" -d '{"id":"existing_id","name":"Updated Name"}' http://localhost:8080/users/{existing_id}
+curl -X PUT -H "Content-Type: application/json" -d '{"id": "id_existente", "firstName": "Name", "lastName": "LastName", "email": "test@example.com"}' http://localhost:8080/users/1
 ```
 
 - **Excluir um usuário:**
